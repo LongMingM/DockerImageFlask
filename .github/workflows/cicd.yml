@@ -28,7 +28,7 @@ jobs:
       run: |
         pytest
 
-builld-and-publish:
+build-and-publish:
   needs: build-and-test
   runs-on: ubuntu-latest
 
