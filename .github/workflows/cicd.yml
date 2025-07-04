@@ -10,23 +10,23 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
-  steps:
-  - name: Checkout Code
-    uses: actions/checkout@v3
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
 
-  - name: Set up Python
-    uses: actions/setup-python@v4
-    with:
-      python-version: '3.9'
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
 
-  - name: Install Dependencies
-    run: |
-      python -m pip install --upgrade pip
-      pip install -r requirements.txt
-    
-  - name: Run Tests
-    run: |
-      pytest
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+      
+    - name: Run Tests
+      run: |
+        pytest
 
 builld-and-publish:
   needs: build-and-test
